@@ -1,0 +1,15 @@
+C:\Users\User\Desktop\DOTNETANDCSHARP\SnakeAndLadder\SnakeAndLadder\bin\Debug\net6.0\SnakeAndLadder.exe
+C:\Users\User\Desktop\DOTNETANDCSHARP\SnakeAndLadder\SnakeAndLadder\bin\Debug\net6.0\SnakeAndLadder.deps.json
+C:\Users\User\Desktop\DOTNETANDCSHARP\SnakeAndLadder\SnakeAndLadder\bin\Debug\net6.0\SnakeAndLadder.runtimeconfig.json
+C:\Users\User\Desktop\DOTNETANDCSHARP\SnakeAndLadder\SnakeAndLadder\bin\Debug\net6.0\SnakeAndLadder.dll
+C:\Users\User\Desktop\DOTNETANDCSHARP\SnakeAndLadder\SnakeAndLadder\bin\Debug\net6.0\SnakeAndLadder.pdb
+C:\Users\User\Desktop\DOTNETANDCSHARP\SnakeAndLadder\SnakeAndLadder\obj\Debug\net6.0\SnakeAndLadder.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\User\Desktop\DOTNETANDCSHARP\SnakeAndLadder\SnakeAndLadder\obj\Debug\net6.0\SnakeAndLadder.AssemblyInfoInputs.cache
+C:\Users\User\Desktop\DOTNETANDCSHARP\SnakeAndLadder\SnakeAndLadder\obj\Debug\net6.0\SnakeAndLadder.AssemblyInfo.cs
+C:\Users\User\Desktop\DOTNETANDCSHARP\SnakeAndLadder\SnakeAndLadder\obj\Debug\net6.0\SnakeAndLadder.csproj.CoreCompileInputs.cache
+C:\Users\User\Desktop\DOTNETANDCSHARP\SnakeAndLadder\SnakeAndLadder\obj\Debug\net6.0\SnakeAndLadder.sourcelink.json
+C:\Users\User\Desktop\DOTNETANDCSHARP\SnakeAndLadder\SnakeAndLadder\obj\Debug\net6.0\SnakeAndLadder.dll
+C:\Users\User\Desktop\DOTNETANDCSHARP\SnakeAndLadder\SnakeAndLadder\obj\Debug\net6.0\refint\SnakeAndLadder.dll
+C:\Users\User\Desktop\DOTNETANDCSHARP\SnakeAndLadder\SnakeAndLadder\obj\Debug\net6.0\SnakeAndLadder.pdb
+C:\Users\User\Desktop\DOTNETANDCSHARP\SnakeAndLadder\SnakeAndLadder\obj\Debug\net6.0\SnakeAndLadder.genruntimeconfig.cache
+C:\Users\User\Desktop\DOTNETANDCSHARP\SnakeAndLadder\SnakeAndLadder\obj\Debug\net6.0\ref\SnakeAndLadder.dll
