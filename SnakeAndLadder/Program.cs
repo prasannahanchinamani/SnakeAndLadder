@@ -10,6 +10,7 @@ namespace SnakeAndLadder
             Random random = new Random();
             int playerPosition = 0;
             int winningPosition = 100;
+            int diceCount = 0;
 
             Dictionary<int, int> snakes = new Dictionary<int, int>
             {
@@ -21,12 +22,16 @@ namespace SnakeAndLadder
                 {2, 38}, {7, 14}, {8, 31}, {15, 26}, {21, 42}
             };
 
+            Console.WriteLine("Snake & Ladder Game");
+            Console.WriteLine("First to reach 100 wins.\n");
+
             while (playerPosition < winningPosition)
             {
                 Console.WriteLine("Press ENTER to roll the dice...");
                 Console.ReadLine();
 
                 int diceRoll = random.Next(1, 7);
+                diceCount++;
                 Console.WriteLine($"Dice rolled: {diceRoll}");
 
                 int newPosition = playerPosition + diceRoll;
@@ -49,9 +54,11 @@ namespace SnakeAndLadder
                         Console.WriteLine($"Ladder at {playerPosition}! Climb up to {ladders[playerPosition]}.");
                         playerPosition = ladders[playerPosition];
                     }
-                    else
+
+                    if (playerPosition < 0)
                     {
-                        Console.WriteLine("No Play — stay at same position.");
+                        Console.WriteLine("Restart at 0.");
+                        playerPosition = 0;
                     }
                 }
 
@@ -59,7 +66,7 @@ namespace SnakeAndLadder
 
                 if (playerPosition == winningPosition)
                 {
-                    Console.WriteLine("🎉 Congratulations! You reached 100 and won the game!");
+                    Console.WriteLine($" Player reached 100 in {diceCount} rolls!");
                     break;
                 }
             }
