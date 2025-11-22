@@ -8,9 +8,10 @@ namespace SnakeAndLadder
         static void Main(string[] args)
         {
             Random random = new Random();
-            int playerPosition = 0;
             int winningPosition = 100;
+            int player1 = 0, player2 = 0;
             int diceCount = 0;
+            bool player1Turn = true;
 
             Dictionary<int, int> snakes = new Dictionary<int, int>
             {
@@ -22,54 +23,66 @@ namespace SnakeAndLadder
                 {2, 38}, {7, 14}, {8, 31}, {15, 26}, {21, 42}
             };
 
-            Console.WriteLine("Snake & Ladder Game");
+            Console.WriteLine("Snake & Ladder Game - Two Players");
             Console.WriteLine("First to reach 100 wins.\n");
 
-            while (playerPosition < winningPosition)
+            while (player1 < winningPosition && player2 < winningPosition)
             {
-                Console.WriteLine("Press ENTER to roll the dice...");
+                Console.WriteLine(player1Turn ? "Player 1 turn" : "Player 2 turn");
                 Console.ReadLine();
 
                 int diceRoll = random.Next(1, 7);
                 diceCount++;
                 Console.WriteLine($"Dice rolled: {diceRoll}");
 
-                int newPosition = playerPosition + diceRoll;
-
-                if (newPosition > winningPosition)
+                if (player1Turn)
                 {
-                    Console.WriteLine("Oops! You need exact roll to win.");
+                    int newPos = player1 + diceRoll;
+                    if (newPos <= winningPosition) player1 = newPos;
+
+                    if (snakes.ContainsKey(player1))
+                    {
+                        Console.WriteLine($"Snake at {player1}! Slide down to {snakes[player1]}.");
+                        player1 = snakes[player1];
+                    }
+                    else if (ladders.ContainsKey(player1))
+                    {
+                        Console.WriteLine($"Ladder at {player1}! Climb up to {ladders[player1]}.");
+                        player1 = ladders[player1];
+                        Console.WriteLine($"Player 1 Position: {player1}\n");
+                        if (player1 < winningPosition) continue; // ladder → extra turn
+                    }
+
+                    Console.WriteLine($"Player 1 Position: {player1}\n");
                 }
                 else
                 {
-                    playerPosition = newPosition;
+                    int newPos = player2 + diceRoll;
+                    if (newPos <= winningPosition) player2 = newPos;
 
-                    if (snakes.ContainsKey(playerPosition))
+                    if (snakes.ContainsKey(player2))
                     {
-                        Console.WriteLine($"Snake at {playerPosition}! Slide down to {snakes[playerPosition]}.");
-                        playerPosition = snakes[playerPosition];
+                        Console.WriteLine($"Snake at {player2}! Slide down to {snakes[player2]}.");
+                        player2 = snakes[player2];
                     }
-                    else if (ladders.ContainsKey(playerPosition))
+                    else if (ladders.ContainsKey(player2))
                     {
-                        Console.WriteLine($"Ladder at {playerPosition}! Climb up to {ladders[playerPosition]}.");
-                        playerPosition = ladders[playerPosition];
+                        Console.WriteLine($"Ladder at {player2}! Climb up to {ladders[player2]}.");
+                        player2 = ladders[player2];
+                        Console.WriteLine($"Player 2 Position: {player2}\n");
+                        if (player2 < winningPosition) continue; // ladder → extra turn
                     }
 
-                    if (playerPosition < 0)
-                    {
-                        Console.WriteLine("Restart at 0.");
-                        playerPosition = 0;
-                    }
+                    Console.WriteLine($"Player 2 Position: {player2}\n");
                 }
 
-                Console.WriteLine($"Current Position: {playerPosition}\n");
-
-                if (playerPosition == winningPosition)
-                {
-                    Console.WriteLine($" Player reached 100 in {diceCount} rolls!");
-                    break;
-                }
+                player1Turn = !player1Turn;
             }
+
+            if (player1 == winningPosition)
+                Console.WriteLine($" Player 1 wins in {diceCount} rolls!");
+            else
+                Console.WriteLine($" Player 2 wins in {diceCount} rolls!");
         }
     }
 }
