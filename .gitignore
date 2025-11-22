@@ -1,0 +1,13 @@
+.vs/
+*.vscode/
+.obj/
+*.exe
+*.dll
+*.pdb
+*.log
+*.user
+*.cache
+*.tmp
+*.bak
+*.swp
+.bin/
